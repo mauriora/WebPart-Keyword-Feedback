@@ -1,0 +1,36 @@
+---
+extends:
+    - prettier
+    - eslint:recommended
+    - plugin:@typescript-eslint/recommended
+parser: "@typescript-eslint/parser"
+env:
+    es6: true
+    browser: true
+plugins:
+    - "@typescript-eslint"
+    - extra-rules
+    - prefer-arrow
+root: true
+rules:
+    arrow-body-style:
+        - error
+        - as-needed
+    extra-rules/no-commented-out-code: warn
+    extra-rules/potential-point-free: warn
+    quotes:
+        - error
+        - single
+    no-console:
+        - warn
+        - allow:
+              - warn
+              - error
+    prefer-arrow/prefer-arrow-functions: warn
+    "@typescript-eslint/no-unused-vars":
+        - error
+        - ignoreRestSiblings: true
+
+    jsx-quotes:
+        - error
+        - prefer-double

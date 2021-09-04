@@ -1,0 +1,27 @@
+{
+    "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+    "solution": {
+        "name": "Mauri-Ora-WebPart-Keyword-Feedback Solution",
+        "id": "0fe9693e-de28-34ed-1119-739740a7c65a",
+        "version": "0.0.2.0",
+        "includeClientSideAssets": true,
+        "skipFeatureDeployment": true,
+        "isDomainIsolated": false,
+        "webApiPermissionRequests": [
+            {
+                "resource": "Microsoft Graph",
+                "scope": "TermStore.ReadWrite.All"
+            }
+        ],
+        "developer": {
+            "name": "Fusion 5",
+            "websiteUrl": "",
+            "privacyUrl": "",
+            "termsOfUseUrl": "",
+            "mpnId": ""
+        }
+    },
+    "paths": {
+        "zippedPackage": "solution/webpart-keyword-feedback.sppkg"
+    }
+}

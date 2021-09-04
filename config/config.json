@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "webpart-keyword-feedback": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/WebPart-Keyword-Feedback/WebPart-Keyword-Feedback.js",
+          "manifest":   "./src/webparts/WebPart-Keyword-Feedback/WebPart-Keyword-Feedback.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "WebPartKeywordFeedbackStrings": "lib/webparts/WebPart-Keyword-Feedback/loc/{locale}.js",
+    "ControlStrings": "../../node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js"
+  }
+}
