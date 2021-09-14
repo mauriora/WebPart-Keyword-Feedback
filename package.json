@@ -1,6 +1,6 @@
 {
     "name": "@mauriora/webpart-keyword-feedback",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "private": true,
     "main": "lib/index.js",
     "engines": {
@@ -8,15 +8,16 @@
     },
     "scripts": {
         "initguids": "node generateNewGuidsResetVersions.js",
+        "lint": "eslint .",
         "serve": "gulp serve-deprecated --nobrowser ",
-        "build": "gulp clean && gulp build --ship && gulp bundle --ship && gulp package-solution --ship",
-        "clean": "gulp clean",
+        "build": "gulp clean --ship && gulp bundle --ship && gulp package-solution --ship",
+        "clean": "gulp clean --ship",
         "test": "gulp test"
     },
     "dependencies": {
+        "@fluentui/react": "^8.16.0",
         "@mauriora/controller-sharepoint-list": "*",
         "@mauriora/utils-spfx-controls-react": "*",
-        "@fluentui/react": "^8.16.0",
         "@microsoft/sp-core-library": "^1.12.1",
         "@microsoft/sp-dialog": "^1.12.1",
         "@microsoft/sp-lodash-subset": "^1.12.1",
@@ -34,7 +35,7 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@microsoft/rush-stack-compiler-3.9": "^0.4.46",
+        "@microsoft/rush-stack-compiler-4.2": "^0.1.1",
         "@microsoft/sp-build-web": "^1.12.1",
         "@microsoft/sp-module-interfaces": "^1.12.1",
         "@microsoft/sp-tslint-rules": "^1.12.1",
@@ -45,7 +46,14 @@
         "@types/react": "16.9.36",
         "@types/react-dom": "16.9.8",
         "@types/webpack-env": "1.13.1",
+        "@typescript-eslint/eslint-plugin": "^4.31.0",
+        "@typescript-eslint/parser": "^4.31.0",
+        "@typescript-eslint/typescript-estree": "^4.31.0",
         "ajv": "~5.2.2",
-        "gulp": "^4.0.2"
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-react": "^7.25.1",
+        "gulp": "^4.0.2",
+        "gulp-eslint7": "^0.3.1"
     }
 }

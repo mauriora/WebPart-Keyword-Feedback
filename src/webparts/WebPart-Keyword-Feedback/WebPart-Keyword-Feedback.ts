@@ -12,7 +12,6 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import * as strings from 'WebPartKeywordFeedbackStrings';
 import KeywordFeedback from './components/KeywordFeedback';
 import * as Controller from '@mauriora/controller-sharepoint-list';
-import { createPropertyPaneSitePicker, ISite } from '@mauriora/utils-spfx-controls-react';
 import { IKeywordFeedbackProps } from './components/IKeywordFeedbackProps';
 import { IListInfo } from '@pnp/sp/presets/all';
 import { configure } from 'mobx';
@@ -32,7 +31,6 @@ export interface IWebPartKeywordFeedbackProps {
 export default class WebPartKeywordFeedback extends BaseClientSideWebPart<IWebPartKeywordFeedbackProps> {
 
   private localListOptions = new Array<IPropertyPaneDropdownOption>();
-  private isolatedListOptions = new Array<IPropertyPaneDropdownOption>();
 
   protected onInit = async (): Promise<void> => {
     console.log(`${this.context.manifest.alias} [${this.context.manifest.id}] version=${this.context.manifest.version} onInit`, { context: this.context, properties: this.properties });
@@ -71,8 +69,6 @@ export default class WebPartKeywordFeedback extends BaseClientSideWebPart<IWebPa
   private localDropdownDisabled: boolean;
 
   protected onPropertyPaneConfigurationStart = async (): Promise<void> => {
-    console.log(`${this.context.manifest.alias} [${this.context.manifest.id}] version=${this.context.manifest.version} onPropertyConfigurationStart`, { context: this.context, properties: this.properties });
-
     this.localDropdownDisabled = this.localListOptions.length === 0;
 
     if (this.localListOptions.length == 0) {

@@ -4,11 +4,9 @@ import KeywordFeedbackContainer from './KeywordFeedbackContainer';
 import * as strings from 'WebPartKeywordFeedbackStrings';
 import { Label } from '@fluentui/react';
 
-export default class KeywordFeedback extends React.Component<IKeywordFeedbackProps, {}> {
+export default class KeywordFeedback extends React.Component<IKeywordFeedbackProps, unknown> {
   public render(): React.ReactElement<IKeywordFeedbackProps> {
     const configured = (this.props.localListId) && (this.props.localSiteUrl);
-
-      console.log(`KeywordFeedback.render() configured=${configured}`, { props: this.props });
 
     if (configured) {
       return (
